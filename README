@@ -1,0 +1,16 @@
+
+                           Notes on relational theory
+                           --------------------------
+
+You should find a PDF for the latest version at:
+
+    http://sites.google.com/site/darwish07/pub/Notes-on-Relational-Theory.pdf
+
+Or compile the document from source, using GNU Make and an up-to-date
+LaTeX environment, by typing:
+
+    $ make
+
+where a nicely typeset PDF file should be produced.
+
+-- Darwish <darwish.07@gmail.com>
