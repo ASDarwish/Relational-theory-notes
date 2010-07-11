@@ -2,14 +2,19 @@
                            Notes on relational theory
                            --------------------------
 
-You should find a PDF for the latest version at:
+Notes on theoretical aspects of the relational model, with several
+relational algebra queries. Download final LaTeX-compiled PDF from:
 
-    http://sites.google.com/site/darwish07/pub/Notes-on-Relational-Theory.pdf
+
+  http://sites.google.com/site/darwish07/pub/notes/Notes-on-Relational-Theory.pdf
+
 
 Or compile the document from source, using GNU Make and an up-to-date
 LaTeX environment, by typing:
 
-    $ make
+
+  $ make
+
 
 where a nicely typeset PDF file should be produced.
 
