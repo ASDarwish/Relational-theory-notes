@@ -62,7 +62,7 @@
 \title{Notes on Relational Theory}
 
 \author{Ahmed S. Darwish\footnote{These notes are based on the databases book
-cited at \cite{elmasri}.Excerpts from E. F. Codd's papers are included in the
+cited at \cite{elmasri}. Excerpts from E. F. Codd's papers are included in the
 first section.}\\
 \texttt{darwish.07@gmail.com}}
 
@@ -91,7 +91,7 @@ $Y$ in the miniworld the relation represents.
 Mathematically, given sets $S_1, S_2, \ldots, S_n$ representing domains that
 are not necessarily distinct, $R$ is called a relation on these $n$ sets if
 it is a set of $n$-tuples\footnote{An $n$-tuple is an ordered list of $n$
-elements} each of which has its first element from $S_1$, its second element
+elements.} each of which has its first element from $S_1$, its second element
 from $S_2$, and so on. More concisely:
 \begin{equation*}
   R \subseteq S_1 \times S_2 \times \ldots \times S_n
@@ -128,17 +128,16 @@ much of the relational model theory was developed with this flat model in
 mind.
 
 Further notation was eventually added to the relational model. A
-\emph{relation schema} $R(A_1, A_2, \ldots, A_n)$ is made-up of the relation
-name $R$ and the list of attributes $A_1, \ldots, A_n$. Each attribute $A$ is
-a name of a \emph{role}\footnote{The \emph{role} concept was originally
-created by Codd to distinguish equivalent domains in the same relation.}
-describing its participating domain $dom(A)$ values. A relation instance
-$r(R)$ is a set of $n$-tuples such that $r(R) = \{t_1, t_2, \ldots, t_m\}$
-and $t_j = \<v_1, v_2, \ldots, v_n\>$ for all $1 \le j \le m$. The $i$th
-value of a tuple $t$ $\in$ $r(R)$, which corresponds to the attribute $A_i$
-for $1 \le i \le n$, is referred to as $t[A_i]$.\footnote{For simplicity, the
-\emph{formal} difference between a relation schema and its instance is
-sometimes ignored.}
+\emph{relation schema} $R(A_1, A_2, \ldots, A_n)$ is made-up of relation name
+$R$ and the list of attributes $A_1, \ldots, A_n$, where each attribute is a
+name of a \emph{role}\footnote{The \emph{role} concept was originally created
+by Codd to distinguish equivalent domains in the same relation.} describing a
+relation-participating domain set. A relation instance $r(R)$ is one of the
+possible $n$-tuples sets $r(R) = \{t_1, t_2, \ldots, t_m\}$ materializing the
+relation schema definition $R$. A value in tuple $t \in r(R)$, corresponding
+to an $R$'s attribute $A$ (or a combination), can be referred to as
+$t[A]$.\footnote{For simplicity, the \emph{notational} difference between a
+schema $R$ and its instance $r(R)$ is sometimes ignored.}
 
 There can be many \emph{constraints} on the data-model imposed by the
 miniworld the database represents. \emph{Domain constraints} specify that
