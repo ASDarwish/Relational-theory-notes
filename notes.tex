@@ -14,6 +14,12 @@
 %% - Soundness and completeness of Armstrong inference rules
 %% - On an appendix: an SQL equivalent of algebraic queries given
 %%
+%% Evolution to the next version:
+%% - Include commented-out 'INTEGRATE'-marked paragraphs
+%% - Really use `multicol'
+%% - Use a 10 or 11pt text font; the current one is huge
+%% - proofread the overall final result
+%%
 %% Source-text coding style (line-feeds included):
 %% - Paragraphs text <= 77 columns
 %% - Math equations  <= 80 columns
@@ -160,6 +166,55 @@ $\forall t_i \in r(R) \colon
 t_i[\m{FK}] = \hbox{\verb/NULL/} \lor
 \exists t_j \in s(S) \colon t_i[\m{FK}] = t_j[\m{PK}]$.
 
+%%% ** INTEGRATE ** %%%
+\begin{comment}
+
+``Consider for example a data bank which contains information about parts,
+projects, and suppliers. The individual description for an individual object
+(such as a particular part) is called an \emph{entity}. The prototype
+description for a class of objects is called an \emph{entity-type}. The set
+of entities of a given entity type can be viewed as a relation, and we shall
+call it an entity-type relation.
+...
+The remaining relations in a data bank are between entity types, are are
+therefore called inter-entity relations. An essential property of every
+inter-entity relation is that its domains include at least two keys which
+either refer to two distinct entity-types or refer to a common entity type
+serving distinct roles.''       -- E.F. Codd, RJ599 IBM research report
+
+Defining \emph{entity} as the individual description of an individual object
+(e.g., a particular employee) and an \emph{entity type} as a prototype
+description for a class of objects (e.g. common traits needed to describe
+an employee in the represented miniworld), the ``set of entities for a given
+entity type'' can be viewed as a relation. Such a relation was referred to as
+an \emph{entity type relation} in Codd's very first paper on the relational
+model.\cite{codd-v0} Figure~(\ref{fig:schema})'s entity type relations are
+the `Employee', `Department', `Project', and `Dependent' ones.
+
+The remaining relations in a database are between entity types, and were thus
+called \emph{inter-entity relations}. Every inter-entity relation includes at
+least \emph{two} foreign keys which either refer to two distinct entity-types
+or refer to a common entity-type serving distinct roles (e.g. a supervisor
+and a supervisee role played by entities in the same `employee' entity type).
+Figure~(\ref{fig:schema})'s inter-entity relations are the `Works\_on' and
+`Dept\_locations' ones. Interestingly, this semantic interpretation of the
+relational model existed long before the entity-relationship approach was
+being published and publicized as an extended
+``data model''.\cite{date-introduction}
+
+\bibitem{codd-v0}
+  E. F. Codd,
+  \emph{Derivability, Redundancy and Consistency of Relations Stored in
+    Large Data Banks}.
+  IBM Research Report RJ599, San Jose, California, August 1969.
+
+\bibitem{date-introduction}
+ C. J. Date,
+ \emph{An Introduction to Database Systems -- 8\textsuperscript{th} Edition}.
+ Addison-Wesley, 2004.
+
+\end{comment}
+
 Finally, note that the terms ``relation'' and ``table'' are not synonymous.
 From their set bases, relations have no positional concepts. Thus, there's
 no ``nextness'' of rows. Similarly, and especially in later versions of the
@@ -305,13 +360,16 @@ subset of $R$'s attributes and $B_1, \ldots, B_m$ as a subset of $S$'s
 attributes, and where all attributes in the join condition $d$ are covered in
 projection list $L$ due to the transformation line marked by $(*)$.
 
+%%% ** INTEGRATE ** %%%
 \begin{comment}
+
 While comprehending some of the complex equations above, it's best to
 visualize the set operators working on horizontal tuples while other
 operators like $\pi$ work on vertical attributes, building a \emph{different}
 set of horizontal tuples. Finally, remember that all relational algebraic
-operators also produce a relation. This makes the relational algebra a
-\emph{closed system}.
+operators also produce a relation, satisfying the model's \emph{closure}
+property and making the relational algebra a \emph{closed system}.
+
 \end{comment}
 
 \emph{Division}: the algebraic counterpart of predicate logic's
